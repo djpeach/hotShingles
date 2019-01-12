@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+	<div class="container">
+		<div class="row">
+			<div class="col mt-5">
+				<div class="jumbotron pb-2">
+						<h1 class="display-4">Shingles ready to mingle</h1>
+						<p class="lead">The best way to find the one. You know the one. Inviting, open, warm, affordable. <br> Its time to stop the blind viewings and find the one. Weclome.</p>
+						<hr class="my-4">
+					{% if user.is_authenticated %}
+						<p>Our Shingles are the hottest around! All of them are excited to meet you and invite you in to stay. Get to know them now!</p>
+						<a class="btn btn-success btn-lg ml-3 my-3" href="{% url 'hotties:list_all_hotties' %}" role="button">Checkout Hot Shingles</a>
+{#						<a class="btn btn-info btn-lg ml-3 my-3" href="{% url 'hotties:profile' %}" role="button">Profile</a>#}
+					{% else %}
+						<p>Our Shingles are the hottest around! All of them are excited to meet you and invite you in to stay. Get to know them now!</p>
+						<a class="btn btn-success btn-lg ml-3 my-3" href="{% url 'hotties:registration' %}" role="button">Become a Hottie</a>
+						<a class="btn btn-info btn-lg ml-3 my-3" href="{% url 'hotties:login' %}" role="button">Login to my account</a>
+					{% endif %}
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}
