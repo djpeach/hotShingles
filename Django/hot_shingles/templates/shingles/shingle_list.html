@@ -1,4 +1,17 @@
 {% extends 'base.html' %}
 {% block content %}
-	List all shingles
+	{% for shingle in shingle_list %}
+		<div class="row">
+			<div class="col-12">
+				<div class="jumbotron">
+					<h1 class="display-4">{{ shingle.title }}</h1>
+					<hr class="my-4">
+					<p class="lead">Address: {{ shingle.address }}</p>
+					<p class="lead">Rooms Available: {{ shingle.rooms_available }}</p>
+					<p class="lead">Owned By: {{ shingle.owner.username }}</p>
+					<a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+				</div>
+			</div>
+		</div>
+	{% endfor %}
 {% endblock content %}
