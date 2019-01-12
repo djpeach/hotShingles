@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+	{% for shingle in shingle_list %}
+		<div class="row">
+			<div class="col-12">
+				<div class="jumbotron">
+					<h1 class="display-4">{{ shingle.title }}</h1>
+					{% if shingle.owner.id == user.id %}
+						<a href="{% url 'shingles:edit_shingle' shingle.id %}" class="btn btn-sm btn-outline-primary">Edit Shingle</a>
+						<a href="{% url 'shingles:delete_shingle' shingle.id %}" class="btn btn-sm btn-outline-danger">Delete Shingle</a>
+					{% endif %}
+					<hr class="my-4">
+					<p class="lead">Address: {{ shingle.address }}</p>
+					<p class="lead">Rooms Available: {{ shingle.rooms_availabe }}</p>
+					<p class="lead">Owned By: {{ shingle.owner.username }}</p>
+					<a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+				</div>
+			</div>
+		</div>
+	{% endfor %}
+{% endblock content %}
