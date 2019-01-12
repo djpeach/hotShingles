@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col col-sm-10 col-md-8 col-lg-6 mt-3">
+                <h2>So sad to see you go! But we know you're never really leaving, you'll be back ;)</h2>
+                <p>Regretting it already? <a href="{% url 'index' %}">main page,</a> or <a href="{% url 'hotties:login' %}">Login</a> to browse anonymously again!</p>
+            </div>
+        </div>
+    </div>
+{% endblock %}
