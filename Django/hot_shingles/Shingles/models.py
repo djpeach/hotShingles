@@ -13,4 +13,4 @@ class Shingle(models.Model):
         return f'{self.title}'
 
     def get_absolute_url(self):
-        return reverse('shingles:shingle-detail', kwargs={'pk': self.id})
+        return reverse('shingles:list_all_shingles')

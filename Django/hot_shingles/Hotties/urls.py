@@ -10,5 +10,6 @@ urlpatterns = [
     path('register/', views.user_registration, name='registration'),
     path('login/', auth_views.LoginView.as_view(template_name='hotties/login.html'), name='login'),
     path('logout/', auth_views.LogoutView.as_view(template_name='hotties/logout.html'), name='logout'),
+    path('my_shingles/<int:pk>/', views.ShinglesListByUser.as_view(), name='list_users_shingles'),
     # path('profile/', views.user_profile, name='profile'),
 ]
