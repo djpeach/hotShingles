@@ -40,6 +40,7 @@ INSTALLED_APPS = [
 
     # Custom Apps
     'Shingles.apps.ShinglesConfig',
+    'Hotties.apps.HottiesConfig',
 
     # Third Part Apps
 ]
