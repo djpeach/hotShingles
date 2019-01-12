@@ -32,5 +32,4 @@ class ShinglesListByUser(mixins.LoginRequiredMixin, generic.ListView):
 
     def get_queryset(self):
         user = get_object_or_404(auth_models.User, id=self.kwargs.get('pk'))
-        hottie = get_object_or_404(models.Hottie, user=user)
-        return shingles_models.Shingle.objects.filter(owner=hottie)
+        return shingles_models.Shingle.objects.filter(owner=user)
